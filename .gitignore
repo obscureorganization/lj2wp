@@ -1,0 +1,4 @@
+wordpress-*.tar.gz
+.vagrant
+/ljdump/
+/wordpress/

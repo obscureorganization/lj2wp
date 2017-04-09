@@ -1,0 +1,19 @@
+--- wordpress/wp-config-sample.php	2008-12-16 03:33:05.000000000 -0500
++++ wordpress/wp-config.php	2017-04-09 12:15:12.000000000 -0400
+@@ -16,13 +16,13 @@
+ 
+ // ** MySQL settings - You can get this info from your web host ** //
+ /** The name of the database for WordPress */
+-define('DB_NAME', 'putyourdbnamehere');
++define('DB_NAME', 'wordpress');
+ 
+ /** MySQL database username */
+-define('DB_USER', 'usernamehere');
++define('DB_USER', 'root');
+ 
+ /** MySQL database password */
+-define('DB_PASSWORD', 'yourpasswordhere');
++define('DB_PASSWORD', 'root');
+ 
+ /** MySQL hostname */
+ define('DB_HOST', 'localhost');
