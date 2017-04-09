@@ -2,6 +2,8 @@
 # vi: set ft=ruby :
 #
 # Adapted from https://gist.github.com/danielpataki/0861bf91430bf2be73da#file-way-sh
+# and https://premium.wpmudev.org/blog/vagrant-wordpress-test-environment/
+#
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
