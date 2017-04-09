@@ -1,6 +1,10 @@
 #!/bin/bash
 #
 # Adapted from https://gist.github.com/danielpataki/0861bf91430bf2be73da#file-way-sh
+# and https://premium.wpmudev.org/blog/vagrant-wordpress-test-environment/
+#
+# Which was adapted from https://gist.github.com/JeffreyWay/9244714/
+# See: https://gist.github.com/JeffreyWay/af0ee7311abfde3e3b73
 #
 
 sudo apt-get update
@@ -9,31 +13,17 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password passwor
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 
 sudo apt-get install -y vim curl python-software-properties
-#sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
 
-#sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt php5-readline mysql-server-5.5 php5-mysql git-core php5-xdebug
-sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql git-core php5-xdebug git
-
-cat << EOF | sudo tee -a /etc/php5/mods-available/xdebug.ini
-xdebug.scream=1
-xdebug.cli_color=1
-xdebug.show_local_vars=1
-EOF
+sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql git-core php5-xdebug
 
 sudo a2enmod rewrite
 
-sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
-sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/apache2/php.ini
-sed -i "s/disable_functions = .*/disable_functions = /" /etc/php5/cli/php.ini
+#sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
+#sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/apache2/php.ini
+#sed -i "s/disable_functions = .*/disable_functions = /" /etc/php5/cli/php.ini
 
 sudo service apache2 restart
-
-# Install composer
-if [[ ! -x /usr/local/bin/composer ]]; then
-    curl -sS https://getcomposer.org/installer | php
-    mv composer.phar /usr/local/bin/composer
-fi
 
 # Install ljdump
 if [[ ! -d /var/www/ljdump ]]; then
@@ -48,7 +38,9 @@ if [[ ! -d /var/www/wordpress ]]; then
 fi
 
 # Create wordpress database
-mysqladmin create wordpress --password='root'
+if ! mysql -u root --password=root <<<"show databases;" | grep '^wordpress$'; then
+    mysqladmin create wordpress --password='root'
+fi
 
 # Configure wp
 WP_CONFIG=/var/www/wordpress/wp-config.php

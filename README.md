@@ -1,4 +1,4 @@
-# LiveJournal to WordPress crutches
+# lj2wp: LiveJournal to WordPress legacy export / import toolkit
 
 _Some assembly required_
 
@@ -16,12 +16,25 @@ The tool (ljdump)[https://github.com/ghewgill/ljdump] still works to export Live
 
 Unfortunately running WordPress 2.7.1 on any public network in 2017 is an invitation to disaster. Fortunately, you can use Vagrant and Virtualbox to run this on a private network on your own computer instead.
 
-This contains a Vagrantfile that sets up a WordPres 2.7.1 environment that can import `ljdump/convertdump` output.
+This contains a `Vagrantfile` that sets up a WordPress 2.7.1 environment that can import `ljdump/convertdump` output.
 
-While the WordPress 2.7.1 importer functions to import entries and comments, it has *no support* for public / private posts. It will import _all_ your LiveJournal posts as public WordPress posts. You might want to redact the journal.
+While the WordPress 2.7.1 importer functions to import entries and comments, it has *no support* for public / private posts. It will import _all_ your LiveJournal posts as public WordPress posts. You might want to redact the journal either before or after importing it.
 
 Some recent LiveJournal posts are also infested by spam comments. You might want to cut those out before importing.
 
 To make this easier, there is a small [pretty.py](pretty.py) script that you can use to pretty-print the XML file or files so that it is easier to edit them before import.
 
-I got the idea from [an older partially translated WordPress Codex entry](https://codex.wordpress.org/zh-cn:%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9#LiveJournal) which talked about getting an older version of WordPress 
+# Instructions
+
+Make sure you have Vagrant (at least version 1.6.5) and VirtualBox (at least version 4.3.14r95030) installed. 
+
+    vagrant up
+
+When this is done, install WordPress through your web browser http://192.168.33.21/wordpress/wp-admin/install.php) on the Vagrant
+
+# Credits
+
+I got the idea from [an older partially translated WordPress Codex entry](https://codex.wordpress.org/zh-cn:%E5%AF%BC%E5%85%A5%E5%86%85%E5%AE%B9#LiveJournal) which talked about getting an older version of WordPress and using that to do the LiveJournal import.
+
+Many thanks go to Greg Hewgill (@ghewgill) for writing ljdump.
+
