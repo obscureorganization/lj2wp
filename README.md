@@ -6,13 +6,13 @@ The current WordPress LiveJournal importer is broken as of 2017-04-09, but an ol
 
 The tool [ljdump](https://github.com/ghewgill/ljdump) still works to export LiveJournal content. It contains a converter called `convertdump` that exports that to an older WordPress XML import format. Unfortunately, WordPress.com and recent versions of WordPress no longer import this format. In order to import it, you need an older version of WordPress, sucn as 2.7.1. If you have that on hand, you can go through this process to get your Journal on a modern version of WordPress:
 
-# Export your LiveJournal using `ljdump.py`
-# Use `convertdump.py` to get a legacy WordPress LiveJournal XML import file
-# (_Optional_) edit the dump file to remove entries and comments you do not want to keep
-# Import that into a freshly installed WordPress 2.7.1 instance
-# (_Optional_) edit the posts in WordPress to change settings, privacy of posts for example
-# Export the site from the WordPress 2.7.1 instance
-# Import the site into a modern WordPress instance, either https://wordpress.com/, another hosted version, or a self-hosted installation.
+1. Export your LiveJournal using `ljdump.py`
+1. Use `convertdump.py` to get a legacy WordPress LiveJournal XML import file
+1. (_Optional_) edit the dump file to remove entries and comments you do not want to keep
+1. Import that into a freshly installed WordPress 2.7.1 instance
+1. (_Optional_) edit the posts in WordPress to change settings, privacy of posts for example
+1. Export the site from the WordPress 2.7.1 instance
+1. Import the site into a modern WordPress instance, either https://wordpress.com/, another hosted version, or a self-hosted installation.
 
 Unfortunately running WordPress 2.7.1 on any public network in 2017 is an [invitation to disaster](https://www.cvedetails.com/vulnerability-list/vendor_id-2337/product_id-4096/version_id-79030/Wordpress-Wordpress-2.7.1.html). Fortunately, you can use Vagrant and Virtualbox to run this on a private network on your own computer instead.
 
