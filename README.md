@@ -113,6 +113,8 @@ Thanks also go to Jeffrey Way (@JeffreyWay) work on a LAMP stack setup script, w
 
 The versions of their scripts adapted here are less focused on development finesse and more on just getting WordPress 2.7.1 running with minimal effort.
 
+Both @danielpataki and @JeffreyWay gave permission to adapt and re-license their original work.
+
 # Legal
 
 MIT Licensed. See [LICENSE.md](LICENSE.md) for details.
