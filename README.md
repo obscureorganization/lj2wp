@@ -4,7 +4,7 @@ _Some assembly required_
 
 The current WordPress LiveJournal importer is broken as of 2017-04-09, but an older path exists that can enable you to import your LiveJournal to WordPress.
 
-The tool (ljdump)[https://github.com/ghewgill/ljdump] still works to export LiveJournal content. It contains a converter called `convertdump` that exports that to an older WordPress XML import format. Unfortunately, WordPress.com and recent versions of WordPress no longer import this format. In order to import it, you need an older version of WordPress, sucn as 2.7.1. If you have that on hand, you can go through this process to get your Journal on a modern version of WordPress:
+The tool [ljdump](https://github.com/ghewgill/ljdump) still works to export LiveJournal content. It contains a converter called `convertdump` that exports that to an older WordPress XML import format. Unfortunately, WordPress.com and recent versions of WordPress no longer import this format. In order to import it, you need an older version of WordPress, sucn as 2.7.1. If you have that on hand, you can go through this process to get your Journal on a modern version of WordPress:
 
 # Export your LiveJournal using `ljdump.py`
 # Use `convertdump.py` to get a legacy WordPress LiveJournal XML import file
