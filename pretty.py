@@ -2,6 +2,19 @@
 #
 # pretty.py
 #
+# Pretty-print an XML file.
+#
+# Sytax:
+#
+#    ./pretty.py filename.xml
+#
+#    or
+#
+#    ./pretty.py < filename.xml
+#
+#    or
+#    some-xml-generator |  ./pretty.py
+#
 # Thanks Stack Overflow https://stackoverflow.com/a/1206856
 
 import sys
