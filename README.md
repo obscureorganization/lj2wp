@@ -115,6 +115,7 @@ The versions of their scripts adapted here are less focused on development fines
 
 Both @danielpataki and @JeffreyWay gave permission to adapt and re-license their original work.
 
+Thanks go to Scott Hanselman for the [suggestion and instructions on switching the git default branch from master to main](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx). This repository transitioned to using `main` as its default branch on 2020-06-14.
 # Legal
 
 MIT Licensed. See [LICENSE.md](LICENSE.md) for details.
